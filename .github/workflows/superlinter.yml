@@ -1,0 +1,14 @@
+name : super lint code
+on : push
+
+jobs:
+    super-lint : 
+      name : lint code tests
+      runs-on : ubuntu-latest
+      steps :
+        -name : run super linter code
+         uses : actions/checkout@v2
+        -name : run code tests
+         uses : github/super-linter@v3
+         env : 
+          DEFAULT_BRANCH : master
